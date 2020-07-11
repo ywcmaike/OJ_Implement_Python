@@ -29,3 +29,4 @@ class TreeNode:
         self.right = right
 class Solution:
 	def countNodes(self, root: TreeNode) -> int:
+		pass
