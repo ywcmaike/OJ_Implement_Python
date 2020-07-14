@@ -29,6 +29,13 @@ class Solution:
 				dp.append(max(nums[i], nums[i] + dp[i-1]))
 		return max(dp)
 
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        length = len(nums)
+        for i in range(1, length):
+            nums[i] = max(nums[i-1] + nums[i], nums[i])
+        return max(nums)
+
 if __name__ == '__main__':
 	nums = [-2,1,-3,4,-1,2,1,-5,4]
 	print(Solution().maxSubArray(nums))
