@@ -39,6 +39,36 @@
 
 from typing import List
 class Solution:
-    def findAnagrams(self, s: str, p: str) -> List[int]:
+	def findAnagrams(self, s: str, p: str) -> List[int]:
+		result = []
+		len_s = len(s)
+		len_p = len(p)
+		if len_s < 1 or len_p < 1 or len_s < len_p:
+			return []
+		count_s = [0] * 26
+		count_p = [0] * 26
+		for a in p:
+			count_p[ord(a) - 97] += 1
+		left = 0
+		for right in range(len_s):
+			if right < len_p - 1:
+				count_s[ord(s[right])-97] += 1
+				continue
+			count_s[ord(s[right])-97] += 1
+			if count_s == count_p:
+				result.append(left)
+			count_s[ord(s[left])-97] -= 1
+			left += 1
+		return result
+
+
+
+
+
+
+
 if __name__ == "__main__":
+	s = "cbaebabacd"
+	p = "abc"
+	print(Solution().findAnagrams(s, p))
 	pass
