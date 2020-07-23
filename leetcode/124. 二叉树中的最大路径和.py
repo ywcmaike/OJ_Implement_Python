@@ -39,7 +39,18 @@ class TreeNode:
         self.right = None
 
 class Solution:
+    def __init__(self):
+        self.ans = float("-inf")
     def maxPathSum(self, root: TreeNode) -> int:
+        def maxGain(node):
+            if not node:
+                return 0
+            left = max(0, maxGain(node.left))
+            right = max(0, maxGain(node.right))
+            self.ans = max(self.ans, left+right+node.val)
+            return node.val + max(left, right)
+        maxGain(root)
+        return self.ans
 
 if __name__ == "__main__":
 	pass
