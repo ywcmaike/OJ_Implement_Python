@@ -27,7 +27,7 @@ def main():
     lists = [3, 5, 4, 2, 1, 6, 8, 7, 9, 0, 11, 14, 12]
     n = len(lists)
     quick_sort(lists, 0, n - 1)
-    print lists
+    print(lists)
 
 if __name__ == '__main__':
     main()

@@ -14,7 +14,7 @@ def bubble_sort(lists):
 def main():
     lists = [3, 5, 4, 2, 1, 6, 8, 7, 9, 0, 11, 14, 12]
     bubble_sort(lists)
-    print lists
+    print(lists)
 
 if __name__ == '__main__':
     main()

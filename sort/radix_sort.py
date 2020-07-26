@@ -6,7 +6,7 @@ def radix_sort(lists, radix=10):
     bucket = [[] for i in range(radix)]
     for i in range(1, k + 1):
         for j in lists:
-            bucket[j/(radix**(i - 1)) % (radix**i)].append(j)
+            bucket[j//(radix**(i - 1)) % (radix**i)].append(j)
         del lists[:]
         for z in bucket:
             lists += z
@@ -18,7 +18,7 @@ def radix_sort(lists, radix=10):
 def main():
     lists = [3, 5, 4, 2, 1, 6, 8, 7, 9, 0, 11, 14, 12]
     radix_sort(lists)
-    print lists
+    print(lists)
 
 if __name__ == '__main__':
     main()

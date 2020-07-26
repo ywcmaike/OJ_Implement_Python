@@ -20,7 +20,7 @@ def  adjust_heap(lists, i, size):
     lchild = 2 * i + 1
     rchild = 2 * i + 2
     min = i
-    if i < size / 2 :
+    if i < size // 2 :
         if lchild < size and lists[lchild] < lists[min]:
             min = lchild
         if rchild < size and lists[rchild] < lists[min]:
@@ -30,7 +30,7 @@ def  adjust_heap(lists, i, size):
             adjust_heap(lists, min, size)
 
 def build_heap(lists, size):
-    for i in range(0, (size/2))[:: -1]:
+    for i in range(0, (size//2))[:: -1]:
         adjust_heap(lists, i, size)
 
 def heap_sort(lists):
@@ -44,7 +44,7 @@ def heap_sort(lists):
 def main():
     lists = [3, 5, 4, 2, 1, 6, 8, 7, 9, 0, 11, 14, 12]
     heap_sort(lists)
-    print lists
+    print(lists)
 
 if __name__ == '__main__':
     main()

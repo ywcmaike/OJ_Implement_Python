@@ -15,7 +15,7 @@ def insert_sort(lists):
 def main():
     lists = [3, 5, 4, 2, 1, 6]
     insert_sort(lists)
-    print lists
+    print(lists)
 
 if __name__ == '__main__':
     main()
